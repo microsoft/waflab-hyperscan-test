@@ -15,5 +15,12 @@ g++ hyperscan.c -o hyperscan -lhs
 
 ## Run
 ```bash
-.\hyperscan <inputfile> <regular expression>
+./hyperscan <inputfile> <regular expression>
 ```
+
+**Example**
+
+```bash
+./hyperscan generate.txt regex.txt
+```
+
