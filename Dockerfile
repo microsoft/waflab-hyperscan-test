@@ -17,22 +17,10 @@ RUN \
     cmake ../ && \
     make && make install 
 
-# Install PCRE2 
+# install go
 RUN \
-    apt-get install -y libpcre2-dev
+    apt-get install golang
 
-# Install RE2 & CRE2
-RUN LD_LIBRARY_PATH="/usr/local/lib"
-RUN export LD_LIBRARY_PATH
-RUN \
-    cd ~ && \
-    git clone https://github.com/google/re2.git && \
-    cd re2 && make && make install 
-RUN \
-    cd ~ && \
-    apt install -y pkg-config texinfo && \
-    git clone https://github.com/marcomaggi/cre2.git && \
-    cd cre2 && \
-    sh autogen.sh && \
-    mkdir build && cd build && ../configure --enable-maintainer-mode && make && make install
-    
+# Copy code
+WORKDIR /src
+COPY . .

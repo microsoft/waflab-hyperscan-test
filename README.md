@@ -5,22 +5,20 @@ For benchmarking the running time of HyperScan library under various regular exp
 
 ## Requirement
 
-More details requirement, please refer to the Dockerfile 
+Docker
 
 ## Build
 
 ```bash
-g++ hyperscan.c -o hyperscan -lhs
+docker build . -t hyperscan-test
 ```
 
 ## Run
 ```bash
-./hyperscan <inputfile> <regular expression>
-```
-
-**Example**
-
-```bash
-./hyperscan generate.txt regex.txt
+# enter docker container as interactive mode
+docker run --rm -it hyperscan-test /bin/bash
+cd /src
+go build -o bench
+./bench
 ```
 
