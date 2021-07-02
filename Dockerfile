@@ -19,7 +19,7 @@ RUN \
 
 # install go
 RUN \
-    apt-get install golang
+    apt-get install -y golang
 
 # Copy code
 WORKDIR /src
