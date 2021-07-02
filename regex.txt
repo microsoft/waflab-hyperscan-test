@@ -1,39 +1,25 @@
-^.*$
-(?:URLENCODED|MULTIPART|XML|JSON)
-(?:URLENCODED|MULTIPART|XML|JSON)
-^.
-(..)$
 ^[a-f]*([0-9])[a-f]*([0-9])
-^0([0-9])
 /user/[0-9]+/edit$
 /admin/content/assets/add/[a-z]+$
 ^[a-zA-Z0-9_-]+
 /admin/content/assets/manage/[0-9]+$
 ^[a-zA-Z0-9_-]+
 /file/ajax/field_asset_[a-z0-9_]+/[ua]nd/0/form-[a-z0-9A-Z_-]+$
-^multipart/form-data
 ^[a-zA-Z0-9_-]+
 /node/[0-9]+/edit$
-/editor/filter_xss/(?:full|basic)_html$
 /user/[0-9]+/contact$
 ^/wp\-json/wp/v[0-9]+/(?:posts|pages)
 ^/wp/v[0-9]+/(?:posts|pages)
 ^(?:|customize_save|update-widget)$
 ^[0-9a-f]+\|\|\d+\|\|\d+$
-^(?:edit|editpost)$
 ^(?:save-widget|update-widget)$
 /wp-admin/load-(?:scripts|styles)\.php$
-^(?:PUT|MOVE)$
 /remote\.php/dav/(?:files|uploads)/
 (?:/public\.php/webdav/|/remote\.php/dav/uploads/)
 /(?:remote|index|public)\.php/
 /ocs/v[0-9]+\.php/apps/files_sharing/
 /index\.php/(?:apps/gallery/thumbnails|logout$)
 (?:/doku.php|/lib/exe/ajax.php)$
-^[%a-zA-Z0-9_-]+
-^[%a-zA-Z0-9_-]+
-^[%a-zA-Z0-9_-]+
-^[%a-zA-Z0-9_-]+
 ^GET /whm-server-status(?:/|/\?auto)? HTTP/[12]\.[01]$
 /(?:conversations|(?:conversations|forums|threads)/.*\.\d+)/draft$
 /(?:conversations/add(?:-preview)?|conversations/messages/\d+/edit|posts/\d+/(?:edit|preview)|(?:conversations|threads)/.*\.\d+/(?:add-reply|reply-preview)|forums/.*\.\d+/(?:post-thread|thread-preview))$
@@ -55,9 +41,7 @@
 /admin\.php\?styles/
 ^(?:GET /|OPTIONS \*) HTTP/[12]\.[01]$
 ^.*\(internal dummy connection\)$
-^$
 RBL lookup of .*?.dnsbl.httpbl.org succeeded at TX:checkip. (.*?): .*
-Search Engine
 ^.*? spammer .*?$
 ^.*? suspicious .*?$
 ^.*? harvester .*?$
@@ -74,33 +58,20 @@ Search Engine
 ^application/x-www-form-urlencoded
 \x25
 \%u[fF]{2}[0-9a-fA-F]{2}
-^$
-^$
-^OPTIONS$
-^$
-^OPTIONS$
-^$
-^0$
 ^[\d.:]+$
 ^multipart/form-data
 ^[\w\d/\.\-\+]+(?:\s?;\s?(?:boundary|charset)\s?=\s?['\"\w\d\.\-]+)?$
 ^[^;\s]+
-^%{tx.allowed_request_content_type}$
 charset\s*=\s*([^;\s]+)
 ^%{tx.allowed_request_content_type_charset}$
 \.([^.]+)$
-^.*$
 ^bytes=(?:(?:\d+)?\-(?:\d+)?\s*,?\s*){6}
 ^bytes=(?:(?:\d+)?\-(?:\d+)?\s*,?\s*){63}
 %[0-9a-fA-F]{2}
-^OPTIONS$
 ['\";=]
-^0$
-^up
 ^bytes=(?:(?:\d+)?\-(?:\d+)?\s*,?\s*){6}
 (?:^|[^\\\\])\\\\[cdeghijklmpqwxyz123456789]
 (?:\bhttp\/(?:0\.9|1\.[01])|<(?:html|meta)\b)
-.
 TX:paramcounter_(.*)
 (?:\x5c|(?:%(?:c(?:0%(?:[2aq]f|5c|9v)|1%(?:[19p]c|8s|af))|2(?:5(?:c(?:0%25af|1%259c)|2f|5c)|%46|f)|(?:(?:f(?:8%8)?0%8|e)0%80%a|bg%q)f|%3(?:2(?:%(?:%6|4)6|F)|5%%63)|u(?:221[56]|002f|EFC8|F025)|1u|5c)|0x(?:2f|5c)|\/))(?:%(?:(?:f(?:(?:c%80|8)%8)?0%8|e)0%80%ae|2(?:(?:5(?:c0%25a|2))?e|%45)|u(?:(?:002|ff0)e|2024)|%32(?:%(?:%6|4)5|E)|c0(?:%[256aef]e|\.))|\.(?:%0[01]|\?)?|\?\.?|0x2e){2}(?:\x5c|(?:%(?:c(?:0%(?:[2aq]f|5c|9v)|1%(?:[19p]c|8s|af))|2(?:5(?:c(?:0%25af|1%259c)|2f|5c)|%46|f)|(?:(?:f(?:8%8)?0%8|e)0%80%a|bg%q)f|%3(?:2(?:%(?:%6|4)6|F)|5%%63)|u(?:221[56]|002f|EFC8|F025)|1u|5c)|0x(?:2f|5c)|\/))
 (?:^|[\\/])\.\.(?:[\\/]|$)
@@ -115,8 +86,6 @@ TX:paramcounter_(.*)
 (?:;|\{|\||\|\||&|&&|\$\(|\$\(\(|`|\${|<\(|>\(|\(\s*\))\s*(?:{|\s*\(\s*|\w+=(?:[^\s]*|\$.*|\$.*|<.*|>.*|\'.*\'|\".*\")\s+|!\s*|\$)*\s*(?:'|\")*(?:[\?\*\[\]\(\)\-\|+\w'\"\./\\\\]+/)?[\\\\'\"]*(?:(?:(?:a[\\\\'\"]*p[\\\\'\"]*t[\\\\'\"]*i[\\\\'\"]*t[\\\\'\"]*u[\\\\'\"]*d|u[\\\\'\"]*p[\\\\'\"]*2[\\\\'\"]*d[\\\\'\"]*a[\\\\'\"]*t)[\\\\'\"]*e|d[\\\\'\"]*n[\\\\'\"]*f|v[\\\\'\"]*i)[\\\\'\"]*(?:\s|<|>).*|p[\\\\'\"]*(?:a[\\\\'\"]*c[\\\\'\"]*m[\\\\'\"]*a[\\\\'\"]*n[\\\\'\"]*(?:\s|<|>).*|w[\\\\'\"]*d|s)|w[\\\\'\"]*(?:(?:\s|<|>).*|h[\\\\'\"]*o))\b
 (?:/|\\\\)(?:[\?\*]+[a-z/\\\\]+|[a-z/\\\\]+[\?\*]+)
 .*\.(?:php\d*|phtml)\.*$
-php://(?:std(?:in|out|err)|(?:in|out)put|fd|memory|temp|filter)
-(?i:zlib|glob|phar|ssh2|rar|ogg|expect|zip)://
 \b(?:s(?:e(?:t(?:_(?:e(?:xception|rror)_handler|magic_quotes_runtime|include_path)|defaultstub)|ssion_s(?:et_save_handler|tart))|qlite_(?:(?:(?:unbuffered|single|array)_)?query|create_(?:aggregate|function)|p?open|exec)|tr(?:eam_(?:context_create|socket_client)|ipc?slashes|rev)|implexml_load_(?:string|file)|ocket_c(?:onnect|reate)|h(?:ow_sourc|a1_fil)e|pl_autoload_register|ystem)|p(?:r(?:eg_(?:replace(?:_callback(?:_array)?)?|match(?:_all)?|split)|oc_(?:(?:terminat|clos|nic)e|get_status|open)|int_r)|o(?:six_(?:get(?:(?:e[gu]|g)id|login|pwnam)|mk(?:fifo|nod)|ttyname|kill)|pen)|hp(?:_(?:strip_whitespac|unam)e|version|info)|g_(?:(?:execut|prepar)e|connect|query)|a(?:rse_(?:ini_file|str)|ssthru)|utenv)|r(?:unkit_(?:function_(?:re(?:defin|nam)e|copy|add)|method_(?:re(?:defin|nam)e|copy|add)|constant_(?:redefine|add))|e(?:(?:gister_(?:shutdown|tick)|name)_function|ad(?:(?:gz)?file|_exif_data|dir))|awurl(?:de|en)code)|i(?:mage(?:createfrom(?:(?:jpe|pn)g|x[bp]m|wbmp|gif)|(?:jpe|pn)g|g(?:d2?|if)|2?wbmp|xbm)|s_(?:(?:(?:execut|write?|read)ab|fi)le|dir)|ni_(?:get(?:_all)?|set)|terator_apply|ptcembed)|g(?:et(?:_(?:c(?:urrent_use|fg_va)r|meta_tags)|my(?:[gpu]id|inode)|(?:lastmo|cw)d|imagesize|env)|z(?:(?:(?:defla|wri)t|encod|fil)e|compress|open|read)|lob)|a(?:rray_(?:u(?:intersect(?:_u?assoc)?|diff(?:_u?assoc)?)|intersect_u(?:assoc|key)|diff_u(?:assoc|key)|filter|reduce|map)|ssert(?:_options)?)|h(?:tml(?:specialchars(?:_decode)?|_entity_decode|entities)|(?:ash(?:_(?:update|hmac))?|ighlight)_file|e(?:ader_register_callback|x2bin))|f(?:i(?:le(?:(?:[acm]tim|inod)e|(?:_exist|perm)s|group)?|nfo_open)|tp_(?:nb_(?:ge|pu)|connec|ge|pu)t|(?:unction_exis|pu)ts|write|open)|o(?:b_(?:get_(?:c(?:ontents|lean)|flush)|end_(?:clean|flush)|clean|flush|start)|dbc_(?:result(?:_all)?|exec(?:ute)?|connect)|pendir)|m(?:b_(?:ereg(?:_(?:replace(?:_callback)?|match)|i(?:_replace)?)?|parse_str)|(?:ove_uploaded|d5)_file|ethod_exists|ysql_query|kdir)|e(?:x(?:if_(?:t(?:humbnail|agname)|imagetype|read_data)|ec)|scapeshell(?:arg|cmd)|rror_reporting|val)|c(?:url_(?:file_create|exec|init)|onvert_uuencode|reate_function|hr)|u(?:n(?:serialize|pack)|rl(?:de|en)code|[ak]?sort)|(?:json_(?:de|en)cod|debug_backtrac|tmpfil)e|b(?:(?:son_(?:de|en)|ase64_en)code|zopen)|var_dump)(?:\s|/\*.*\*/|//.*|#.*)*\(.*\)
 [oOcC]:\d+:\".+?\":\d+:{.*}
 \$+(?:[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*|\s*{.+})(?:\s|\[.+\]|{.+}|/\*.*\*/|//.*|#.*)*\(.*\)
@@ -203,21 +172,15 @@ java\.lang\.(?:runtime|processbuilder)
 (?:unmarshaller|base64data|java\.)
 (?:clonetransformer|forclosure|instantiatefactory|instantiatetransformer|invokertransformer|prototypeclonefactory|prototypeserializationfactory|whileclosure|getproperty|filewriter|xmldecoder)
 (?:runtime|processbuilder)
-\xac\xed\x00\x05
 (?:rO0ABQ|KztAAU|Cs7QAF)
 (?:clonetransformer|forclosure|instantiatefactory|instantiatetransformer|invokertransformer|prototypeclonefactory|prototypeserializationfactory|whileclosure|getproperty|filewriter|xmldecoder)
 java\b.+(?:runtime|processbuilder)
 (?:cnVudGltZQ|HJ1bnRpbWU|BydW50aW1l|cHJvY2Vzc2J1aWxkZXI|HByb2Nlc3NidWlsZGVy|Bwcm9jZXNzYnVpbGRlcg|Y2xvbmV0cmFuc2Zvcm1lcg|GNsb25ldHJhbnNmb3JtZXI|BjbG9uZXRyYW5zZm9ybWVy|Zm9yY2xvc3VyZQ|GZvcmNsb3N1cmU|Bmb3JjbG9zdXJl|aW5zdGFudGlhdGVmYWN0b3J5|Gluc3RhbnRpYXRlZmFjdG9yeQ|BpbnN0YW50aWF0ZWZhY3Rvcnk|aW5zdGFudGlhdGV0cmFuc2Zvcm1lcg|Gluc3RhbnRpYXRldHJhbnNmb3JtZXI|BpbnN0YW50aWF0ZXRyYW5zZm9ybWVy|aW52b2tlcnRyYW5zZm9ybWVy|Gludm9rZXJ0cmFuc2Zvcm1lcg|BpbnZva2VydHJhbnNmb3JtZXI|cHJvdG90eXBlY2xvbmVmYWN0b3J5|HByb3RvdHlwZWNsb25lZmFjdG9yeQ|Bwcm90b3R5cGVjbG9uZWZhY3Rvcnk|cHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk|HByb3RvdHlwZXNlcmlhbGl6YXRpb25mYWN0b3J5|Bwcm90b3R5cGVzZXJpYWxpemF0aW9uZmFjdG9yeQ|d2hpbGVjbG9zdXJl|HdoaWxlY2xvc3VyZQ|B3aGlsZWNsb3N1cmU)
 (?:<(?:TITLE>Index of.*?<H|title>Index of.*?<h)1>Index of|>\[To Parent Directory\]<\/[Aa]><br>)
-^#\!\s?/
-^5\d{2}$
 (?i:JET Database Engine|Access Database Engine|\[Microsoft\]\[ODBC Microsoft Access Driver\])
 (?i:ORA-[0-9][0-9][0-9][0-9]|java\.sql\.SQLException|Oracle error|Oracle.*Driver|Warning.*oci_.*|Warning.*ora_.*)
 (?i:DB2 SQL error:|\[IBM\]\[CLI Driver\]\[DB2/6000\]|CLI Driver.*DB2|DB2 SQL error|db2_\w+\()
 (?i:\[DM_QUERY_E_SYNTAX\]|has occurred in the vicinity of:)
-Dynamic SQL Error
-Exception (?:condition )?\d+\. Transaction rollback\.
-org\.hsqldb\.jdbc
 (?i:An illegal character has been found in the statement|com\.informix\.jdbc|Exception.*Informix)
 (?i:Warning.*ingres_|Ingres SQLSTATE|Ingres\W.*Driver)
 (?i:<b>Warning</b>: ibase_|Unexpected end of command in statement)
@@ -225,12 +188,10 @@ org\.hsqldb\.jdbc
 (?:System\.Data\.OleDb\.OleDbException|\[Microsoft\]\[ODBC SQL Server Driver\]|\[Macromedia\]\[SQLServer JDBC Driver\]|\[SqlException|System\.Data\.SqlClient\.SqlException|Unclosed quotation mark after the character string|'80040e14'|mssql_query\(\)|Microsoft OLE DB Provider for ODBC Drivers|Microsoft OLE DB Provider for SQL Server|Incorrect syntax near|Sintaxis incorrecta cerca de|Syntax error in string in query expression|Procedure or function .* expects parameter|Unclosed quotation mark before the character string|Syntax error .* in query expression|Data type mismatch in criteria expression\.|ADODB\.Field \(0x800A0BCD\)|the used select statements have different number of columns|OLE DB.*SQL Server|Warning.*mssql_.*|Driver.*SQL[\-\_\ ]*Server|SQL Server.*Driver|SQL Server.*[0-9a-fA-F]{8}|Exception.*\WSystem\.Data\.SqlClient\.)
 (?:supplied argument is not a valid MySQL|Column count doesn't match value count at row|mysql_fetch_array\(\)|on MySQL result index|You have an error in your SQL syntax;|You have an error in your SQL syntax near|MySQL server version for the right syntax to use|\[MySQL\]\[ODBC|Column count doesn't match|Table '[^']+' doesn't exist|SQL syntax.*MySQL|Warning.*mysql_.*|valid MySQL result|MySqlClient\.)
 (?i:PostgreSQL query failed:|pg_query\(\) \[:|pg_exec\(\) \[:|PostgreSQL.*ERROR|Warning.*pg_.*|valid PostgreSQL result|Npgsql\.|PG::[a-zA-Z]*Error|Supplied argument is not a valid PostgreSQL .*? resource|Unable to connect to PostgreSQL server)
-(?:Warning.*sqlite_.*|Warning.*SQLite3::|SQLite/JDBCDriver|SQLite\.Exception|System\.Data\.SQLite\.SQLiteException)
 (?:Sybase message:|Warning.*sybase.*|Sybase.*Server message.*)
 (?:\b(?:f(?:tp_(?:nb_)?f?(?:ge|pu)t|get(?:s?s|c)|scanf|write|open|read)|gz(?:(?:encod|writ)e|compress|open|read)|s(?:ession_start|candir)|read(?:(?:gz)?file|dir)|move_uploaded_file|(?:proc_|bz)open|call_user_func)|\$_(?:(?:pos|ge)t|session))\b
 (?:\x1f\x8b\x08|\b(?:(?:i(?:nterplay|hdr|d3)|m(?:ovi|thd)|r(?:ar!|iff)|(?:ex|jf)if|f(?:lv|ws)|varg|cws)\b|gif)|B(?:%pdf|\.ra)\b|^wOF(?:F|2))
 [a-z]:\\\\inetpub\b
 (?:Microsoft OLE DB Provider for SQL Server(?:<\/font>.{1,20}?error '800(?:04005|40e31)'.{1,40}?Timeout expired| \(0x80040e31\)<br>Timeout expired<br>)|<h1>internal server error<\/h1>.*?<h2>part of the server has crashed or it has a configuration error\.<\/h2>|cannot connect to the server: timed out)
 (?:\b(?:A(?:DODB\.Command\b.{0,100}?\b(?:Application uses a value of the wrong type for the current operation\b|error')| trappable error occurred in an external object\. The script cannot continue running\b)|Microsoft VBScript (?:compilation (?:\(0x8|error)|runtime (?:Error|\(0x8))\b|Object required: '|error '800)|<b>Version Information:<\/b>(?:&nbsp;|\s)(?:Microsoft \.NET Framework|ASP\.NET) Version:|>error 'ASP\b|An Error Has Occurred|>Syntax error in string in query expression|\/[Ee]rror[Mm]essage\.aspx?\?[Ee]rror\b)
-^404$
 \bServer Error in.{0,50}?\bApplication\b
