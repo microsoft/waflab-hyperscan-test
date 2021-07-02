@@ -12,8 +12,6 @@ var code1 = []rune{ /* \d */
 }
 
 var code2 = []rune{ /* \s */
-	0x9, 0xa,
-	0xc, 0xd,
 	0x20, 0x20,
 }
 
