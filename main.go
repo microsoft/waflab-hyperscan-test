@@ -57,9 +57,16 @@ func main() {
 		panic(err)
 	}
 	regexs := []string{}
+	ruleId := []string{}
+	count := 0
 	reader := bufio.NewReaderSize(file, 10000)
 	for line, _, err := reader.ReadLine(); err != io.EOF; line, _, err = reader.ReadLine() {
-		regexs = append(regexs, string(line))
+		if count%2 == 0 {
+			ruleId = append(ruleId, string(line))
+		} else {
+			regexs = append(regexs, string(line))
+		}
+		count++
 	}
 	regex_res := make([]time.Duration, len(regexs))
 	random_res := make([]time.Duration, len(regexs))
@@ -68,18 +75,26 @@ func main() {
 	for i := 0; i < len(order); i++ {
 		order[i] = i / 20
 	}
-	rand.Shuffle(len(order), func(i, j int) {
-		order[i], order[j] = order[j], order[i]
-	})
 
+	cnt := 0
 	for _, index := range order {
 		gen_string, _ := reggen.Generate(regexs[index], 100)
 		random_string := RandStringRunes(len(gen_string))
 		regex_res[index] += match(regexs[index], gen_string)
 		random_res[index] += match(regexs[index], random_string)
+		cnt++
+		if cnt == 20 {
+			fmt.Printf(
+				"[ \033[1;37;42m%s\033[0m | \033[1;33;40m%s\033[0m | \033[1;37;44m%d µs\033[0m | \033[1;37;46m%d µs\033[0m | (%d/%d) ]\n",
+				ruleId[index],
+				regexs[index],
+				regex_res[index].Microseconds(),
+				random_res[index].Microseconds(),
+				index+1,
+				len(regexs),
+			)
+			cnt = 0
+		}
 	}
-
-	for i := 0; i < len(regex_res); i++ {
-		fmt.Println(regex_res[i].Microseconds(), random_res[i].Microseconds())
-	}
+	fmt.Println("Completed!")
 }
