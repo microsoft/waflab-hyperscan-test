@@ -1,5 +1,6 @@
-# Introduction 
-For benchmarking the running time of HyperScan library under various regular expression and input data.
+# waflab-hyperscan-test
+
+This repo is used for benchmarking the performance of HyperScan against the [ModSecurity Core Rule Set (v3.2/master)](https://github.com/coreruleset/coreruleset/tree/v3.2/master)
 
 # Getting Started
 
@@ -22,3 +23,12 @@ go build -o bench
 ./bench
 ```
 
+The output columns are:
+
+1. Rule ID
+2. Regex
+3. Time for "Tough String"
+4. Time for Random String
+5. Current Progress
+
+Usually we can use "4. Time for Random String" as the benchmarking time.
